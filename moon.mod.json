@@ -1,13 +1,13 @@
 {
   "name": "CAIMEOX/svg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "deps": {
     "Luna-Flow/luna-generic": "0.2.0-alpha-1"
   },
   "readme": "README.md",
-  "repository": "",
+  "repository": "https://github.com/CAIMEOX/svg.git",
   "license": "Apache-2.0",
   "keywords": ["svg"],
-  "description": "",
+  "description": "MoonBit SVG eDSL",
   "source": "src"
 }
