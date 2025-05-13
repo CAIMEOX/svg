@@ -1,0 +1,13 @@
+{
+  "name": "CAIMEOX/svg",
+  "version": "0.1.0",
+  "deps": {
+    "Luna-Flow/luna-generic": "0.2.0-alpha-1"
+  },
+  "readme": "README.md",
+  "repository": "",
+  "license": "Apache-2.0",
+  "keywords": ["svg"],
+  "description": "",
+  "source": "src"
+}

@@ -1,0 +1,522 @@
+package "CAIMEOX/svg"
+
+import(
+  "Luna-Flow/luna-generic"
+  "moonbitlang/core/immut/hashmap"
+)
+
+// Values
+fn a(Array[Attribute], child? : Element) -> Element
+
+fn aa[N : RealFloat](N, N, N, N, N, N, N) -> String
+
+fn animate(Array[Attribute], child? : Element) -> Element
+
+fn animateMotion(Array[Attribute], child? : Element) -> Element
+
+fn animateTransform(Array[Attribute], child? : Element) -> Element
+
+fn ar[N : RealFloat](N, N, N, N, N, N, N) -> String
+
+fn ca[N : RealFloat](N, N, N, N, N, N) -> String
+
+fn circle(Array[Attribute], child? : Element) -> Element
+
+fn clipPath(Array[Attribute], child? : Element) -> Element
+
+fn colorProfile(Array[Attribute], child? : Element) -> Element
+
+fn cr[N : RealFloat](N, N, N, N, N, N) -> String
+
+fn cursor(Array[Attribute], child? : Element) -> Element
+
+fn defs(Array[Attribute], child? : Element) -> Element
+
+fn desc(Array[Attribute], child? : Element) -> Element
+
+fn doc_type() -> Element
+
+fn ellipse(Array[Attribute], child? : Element) -> Element
+
+fn feBlend(Array[Attribute], child? : Element) -> Element
+
+fn feColorMatrix(Array[Attribute], child? : Element) -> Element
+
+fn feComponentTransfer(Array[Attribute], child? : Element) -> Element
+
+fn feComposite(Array[Attribute], child? : Element) -> Element
+
+fn feConvolveMatrix(Array[Attribute], child? : Element) -> Element
+
+fn feDiffuseLighting(Array[Attribute], child? : Element) -> Element
+
+fn feDisplacementMap(Array[Attribute], child? : Element) -> Element
+
+fn feDistantLight(Array[Attribute], child? : Element) -> Element
+
+fn feFlood(Array[Attribute], child? : Element) -> Element
+
+fn feFuncA(Array[Attribute], child? : Element) -> Element
+
+fn feFuncB(Array[Attribute], child? : Element) -> Element
+
+fn feFuncG(Array[Attribute], child? : Element) -> Element
+
+fn feFuncR(Array[Attribute], child? : Element) -> Element
+
+fn feGaussianBlur(Array[Attribute], child? : Element) -> Element
+
+fn feImage(Array[Attribute], child? : Element) -> Element
+
+fn feMerge(Array[Attribute], child? : Element) -> Element
+
+fn feMergeNode(Array[Attribute], child? : Element) -> Element
+
+fn feMorphology(Array[Attribute], child? : Element) -> Element
+
+fn feOffset(Array[Attribute], child? : Element) -> Element
+
+fn fePointLight(Array[Attribute], child? : Element) -> Element
+
+fn feSpecularLighting(Array[Attribute], child? : Element) -> Element
+
+fn feSpotLight(Array[Attribute], child? : Element) -> Element
+
+fn feTile(Array[Attribute], child? : Element) -> Element
+
+fn feTurbulence(Array[Attribute], child? : Element) -> Element
+
+fn filter(Array[Attribute], child? : Element) -> Element
+
+fn font(Array[Attribute], child? : Element) -> Element
+
+fn fontFace(Array[Attribute], child? : Element) -> Element
+
+fn fontFaceFormat(Array[Attribute]) -> Element
+
+fn fontFaceName(Array[Attribute]) -> Element
+
+fn fontFaceSrc(Array[Attribute], child? : Element) -> Element
+
+fn fontFaceUri(Array[Attribute], child? : Element) -> Element
+
+fn foreignObject(Array[Attribute], child? : Element) -> Element
+
+fn g(Array[Attribute], child? : Element) -> Element
+
+fn glyph(Array[Attribute], child? : Element) -> Element
+
+fn glyphRef(Array[Attribute]) -> Element
+
+fn ha[N : RealFloat](N) -> String
+
+fn hkern(Array[Attribute]) -> Element
+
+fn hr[N : RealFloat](N) -> String
+
+fn image(Array[Attribute], child? : Element) -> Element
+
+fn la[N : RealFloat](N, N) -> String
+
+fn line(Array[Attribute], child? : Element) -> Element
+
+fn linearGradient(Array[Attribute], child? : Element) -> Element
+
+fn lr[N : RealFloat](N, N) -> String
+
+fn ma[N : RealFloat](N, N) -> String
+
+fn marker(Array[Attribute], child? : Element) -> Element
+
+fn mask(Array[Attribute], child? : Element) -> Element
+
+fn matrix[N : RealFloat](N, N, N, N, N, N) -> String
+
+fn metadata(Array[Attribute], child? : Element) -> Element
+
+fn missingGlyph(Array[Attribute], child? : Element) -> Element
+
+fn mpath(Array[Attribute], child? : Element) -> Element
+
+fn mr[N : RealFloat](N, N) -> String
+
+fn new(String, String) -> Attribute
+
+fn op_get(Tag, String) -> Attribute
+
+fn path(Array[Attribute], child? : Element) -> Element
+
+fn pattern(Array[Attribute], child? : Element) -> Element
+
+fn polygon(Array[Attribute], child? : Element) -> Element
+
+fn polyline(Array[Attribute], child? : Element) -> Element
+
+fn qa[N : RealFloat](N, N, N, N) -> String
+
+fn qr[N : RealFloat](N, N, N, N) -> String
+
+fn radialGradient(Array[Attribute], child? : Element) -> Element
+
+fn rect(Array[Attribute], child? : Element) -> Element
+
+fn rotate[N : RealFloat](N) -> String
+
+fn rotate_around[N : RealFloat](N, N, N) -> String
+
+fn sa[N : RealFloat](N, N, N, N) -> String
+
+fn scale[N : RealFloat](N, N) -> String
+
+fn script(Array[Attribute], child? : Element) -> Element
+
+fn set(Array[Attribute], child? : Element) -> Element
+
+fn skew_x[N : RealFloat](N) -> String
+
+fn skew_y[N : RealFloat](N) -> String
+
+fn sr[N : RealFloat](N, N, N, N) -> String
+
+fn stop(Array[Attribute], child? : Element) -> Element
+
+fn style(Array[Attribute], child? : Element) -> Element
+
+fn svg(Array[Attribute], child? : Element) -> Element
+
+fn svg11(Element) -> Element
+
+fn switch(Array[Attribute], child? : Element) -> Element
+
+fn symbol(Array[Attribute], child? : Element) -> Element
+
+fn ta[N : RealFloat](N, N) -> String
+
+fn term(String, Array[Attribute], child? : Element) -> Element
+
+fn text(Array[Attribute], child? : Element) -> Element
+
+fn textPath(Array[Attribute], child? : Element) -> Element
+
+fn title(Array[Attribute], child? : Element) -> Element
+
+fn tr[N : RealFloat](N, N) -> String
+
+fn translate[N : RealFloat](N, N) -> String
+
+fn tref(Array[Attribute], child? : Element) -> Element
+
+fn tspan(Array[Attribute], child? : Element) -> Element
+
+fn use_(Array[Attribute], child? : Element) -> Element
+
+fn va[N : RealFloat](N) -> String
+
+fn view(Array[Attribute], child? : Element) -> Element
+
+fn vkern(Array[Attribute]) -> Element
+
+fn vr[N : RealFloat](N) -> String
+
+fn with_attr(Element, Array[Attribute]) -> Element
+
+fn z() -> String
+
+// Types and methods
+type Attribute
+impl Eq for Attribute
+impl Hash for Attribute
+impl Show for Attribute
+
+type Element
+impl Element {
+  doc_type(String) -> Self
+  make(Self, String) -> Self
+  make_empty(String) -> Self
+  new((@hashmap.T[String, String]) -> String) -> Self
+  str(String) -> Self
+  svg11(Self) -> Self
+  with_attr(Self, Array[Attribute]) -> Self
+}
+impl Add for Element
+impl Show for Element
+
+pub(all) enum Tag {
+  AccentHeight
+  Accumulate
+  Additive
+  AlignmentBaseline
+  Alphabetic
+  Amplitude
+  ArabicForm
+  Ascent
+  AttributeName
+  AttributeType
+  Azimuth
+  BaseFrequency
+  Baseprofile
+  BaselineShift
+  Bbox
+  Begin
+  Bias
+  By
+  CalcMode
+  CapHeight
+  Class
+  Clip
+  ClipPath
+  ClipRule
+  ClipPathUnits
+  Color
+  ColorInterpolation
+  ColorInterpolationFilters
+  ColorProfile
+  ColorRendering
+  ContentScriptType
+  ContentStyleType
+  Cursor
+  Cx
+  Cy
+  D
+  Descent
+  DiffuseConstant
+  Direction
+  Display
+  Divisor
+  DominantBaseline
+  Dur
+  Dx
+  Dy
+  EdgeMode
+  Elevation
+  EnableBackground
+  End
+  Exponent
+  ExternalResourcesRequired
+  Fill
+  FillOpacity
+  FillRule
+  Filter
+  FilterRes
+  FilterUnits
+  FloodColor
+  FloodOpacity
+  FontFamily
+  FontSize
+  FontSizeAdjust
+  FontStretch
+  FontStyle
+  FontVariant
+  FontWeight
+  Format
+  From
+  Fx
+  Fy
+  G1
+  G2
+  GlyphName
+  GlyphOrientationHorizontal
+  GlyphOrientationVertical
+  GradientTransform
+  GradientUnits
+  Hanging
+  Height
+  HorizAdvX
+  HorizOriginX
+  HorizOriginY
+  Id
+  Ideographic
+  ImageRendering
+  In
+  In2
+  Intercept
+  K
+  K1
+  K2
+  K3
+  K4
+  KernelMatrix
+  KernelUnitLength
+  Kerning
+  KeyPoints
+  KeySplines
+  KeyTimes
+  Lang
+  LengthAdjust
+  LetterSpacing
+  LightingColor
+  LimitingConeAngle
+  Local
+  MarkerEnd
+  MarkerMid
+  MarkerStart
+  MarkerHeight
+  MarkerUnits
+  MarkerWidth
+  MaskContentUnits
+  MaskUnits
+  Mathematical
+  Max
+  Media
+  Method
+  Min
+  Mode
+  Name
+  NumOctaves
+  Offset
+  Onabort
+  Onactivate
+  Onbegin
+  Onclick
+  Onend
+  Onerror
+  Onfocusin
+  Onfocusout
+  Onload
+  Onmousedown
+  Onmousemove
+  Onmouseout
+  Onmouseover
+  Onmouseup
+  Onrepeat
+  Onresize
+  Onscroll
+  Onunload
+  Onzoom
+  Opacity
+  Operator
+  Order
+  Orient
+  Orientation
+  Origin
+  Overflow
+  OverlinePosition
+  OverlineThickness
+  Panose1
+  PaintOrder
+  Path
+  PathLength
+  PatternContentUnits
+  PatternTransform
+  PatternUnits
+  PointerEvents
+  Points
+  PointsAtX
+  PointsAtY
+  PointsAtZ
+  PreserveAlpha
+  PreserveAspectRatio
+  PrimitiveUnits
+  R
+  Radius
+  RefX
+  RefY
+  RenderingIntent
+  RepeatCount
+  RepeatDur
+  RequiredExtensions
+  RequiredFeatures
+  Restart
+  Result
+  Rotate
+  Rx
+  Ry
+  Scale
+  Seed
+  ShapeRendering
+  Slope
+  Spacing
+  SpecularConstant
+  SpecularExponent
+  SpreadMethod
+  StartOffset
+  StdDeviation
+  Stemh
+  Stemv
+  StitchTiles
+  StopColor
+  StopOpacity
+  StrikethroughPosition
+  StrikethroughThickness
+  String
+  Stroke
+  StrokeDasharray
+  StrokeDashoffset
+  StrokeLinecap
+  StrokeLinejoin
+  StrokeMiterlimit
+  StrokeOpacity
+  StrokeWidth
+  Style
+  SurfaceScale
+  SystemLanguage
+  TableValues
+  Target
+  TargetX
+  TargetY
+  TextAnchor
+  TextDecoration
+  TextRendering
+  TextLength
+  To
+  Transform
+  Type
+  U1
+  U2
+  UnderlinePosition
+  UnderlineThickness
+  Unicode
+  UnicodeBidi
+  UnicodeRange
+  UnitsPerEm
+  VAlphabetic
+  VHanging
+  VIdeographic
+  VMathematical
+  Values
+  Version
+  VertAdvY
+  VertOriginX
+  VertOriginY
+  ViewBox
+  ViewTarget
+  Visibility
+  Width
+  Widths
+  WordSpacing
+  WritingMode
+  X
+  XHeight
+  X1
+  X2
+  XChannelSelector
+  XlinkActuate
+  XlinkArcrole
+  XlinkHref
+  XlinkRole
+  XlinkShow
+  XlinkTitle
+  XlinkType
+  XmlBase
+  XmlLang
+  XmlSpace
+  Y
+  Y1
+  Y2
+  YChannelselector
+  Z
+  ZoomAndPan
+}
+impl Tag {
+  op_get(Self, String) -> Attribute
+}
+impl Eq for Tag
+impl Hash for Tag
+impl Show for Tag
+
+// Type aliases
+
+// Traits
+pub(open) trait RealFloat : @luna-generic.Num + Show {
+}
+
