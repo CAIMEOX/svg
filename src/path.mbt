@@ -2,55 +2,55 @@
 pub(open) trait RealFloat: @lg.Num + Show {}
 
 ///|
-///| moveto (absolute)
+/// moveto (absolute)
 pub fn ma[N : RealFloat](x : N, y : N) -> String {
   "M \{x},\{y} "
 }
 
 ///|
-///| moveto (relative)
+/// moveto (relative)
 pub fn mr[N : RealFloat](dx : N, dy : N) -> String {
   "m \{dx},\{dy} "
 }
 
 ///|
-///| lineto (absolute)
+/// lineto (absolute)
 pub fn la[N : RealFloat](x : N, y : N) -> String {
   "L \{x},\{y} "
 }
 
 ///|
-///| lineto (relative)
+/// lineto (relative)
 pub fn lr[N : RealFloat](dx : N, dy : N) -> String {
   "l \{dx},\{dy} "
 }
 
 ///|
-///| horizontal lineto (absolute)
+/// horizontal lineto (absolute)
 pub fn ha[N : RealFloat](x : N) -> String {
   "H \{x} "
 }
 
 ///|
-///| horizontal lineto (relative)
+/// horizontal lineto (relative)
 pub fn hr[N : RealFloat](dx : N) -> String {
   "h \{dx} "
 }
 
 ///|
-///| vertical lineto (absolute)
+/// vertical lineto (absolute)
 pub fn va[N : RealFloat](y : N) -> String {
   "V \{y} "
 }
 
 ///|
-///| vertical lineto (relative)
+/// vertical lineto (relative)
 pub fn vr[N : RealFloat](dy : N) -> String {
   "v \{dy} "
 }
 
 ///|
-///| Cubic Bezier curve (absolute)
+/// Cubic Bezier curve (absolute)
 pub fn ca[N : RealFloat](
   c1x : N,
   c1y : N,
@@ -63,7 +63,7 @@ pub fn ca[N : RealFloat](
 }
 
 ///|
-///| Cubic Bezier curve (relative)
+/// Cubic Bezier curve (relative)
 pub fn cr[N : RealFloat](
   dc1x : N,
   dc1y : N,
@@ -76,43 +76,43 @@ pub fn cr[N : RealFloat](
 }
 
 ///|
-///| Smooth Cubic Bezier curve (absolute)
+/// Smooth Cubic Bezier curve (absolute)
 pub fn sa[N : RealFloat](c2x : N, c2y : N, x : N, y : N) -> String {
   "S \{c2x},\{c2y} \{x},\{y} "
 }
 
 ///|
-///| Smooth Cubic Bezier curve (relative)
+/// Smooth Cubic Bezier curve (relative)
 pub fn sr[N : RealFloat](dc2x : N, dc2y : N, dx : N, dy : N) -> String {
   "s \{dc2x},\{dc2y} \{dx},\{dy} "
 }
 
 ///|
-///| Quadratic Bezier curve (absolute)
+/// Quadratic Bezier curve (absolute)
 pub fn qa[N : RealFloat](cx : N, cy : N, x : N, y : N) -> String {
   "Q \{cx},\{cy} \{x},\{y} "
 }
 
 ///|
-///| Quadratic Bezier curve (relative)
+/// Quadratic Bezier curve (relative)
 pub fn qr[N : RealFloat](dcx : N, dcy : N, dx : N, dy : N) -> String {
   "q \{dcx},\{dcy} \{dx},\{dy} "
 }
 
 ///|
-///| Smooth Quadratic Bezier curve (absolute)
+/// Smooth Quadratic Bezier curve (absolute)
 pub fn ta[N : RealFloat](x : N, y : N) -> String {
   "T \{x},\{y} "
 }
 
 ///|
-///| Smooth Quadratic Bezier curve (relative)
+/// Smooth Quadratic Bezier curve (relative)
 pub fn tr[N : RealFloat](x : N, y : N) -> String {
   "t \{x},\{y} "
 }
 
 ///|
-///| Arc (absolute)
+/// Arc (absolute)
 pub fn aa[N : RealFloat](
   rx : N,
   ry : N,
@@ -126,7 +126,7 @@ pub fn aa[N : RealFloat](
 }
 
 ///|
-///| Arc (relative)
+/// Arc (relative)
 pub fn ar[N : RealFloat](
   rx : N,
   ry : N,
@@ -140,50 +140,50 @@ pub fn ar[N : RealFloat](
 }
 
 ///|
-///| closepath
+/// closepath
 pub fn z() -> String {
   "Z "
 }
 
 ///|
-///| SVG Transform components
-///| Specifies a translation by x and y
+/// SVG Transform components
+/// Specifies a translation by x and y
 pub fn translate[N : RealFloat](x : N, y : N) -> String {
   "translate(\{x} \{y})"
 }
 
 ///|
-///| Specifies a scale operation by x and y
+/// Specifies a scale operation by x and y
 pub fn scale[N : RealFloat](x : N, y : N) -> String {
   "scale(\{x} \{y})"
 }
 
 ///|
-///| Specifies a rotation by rotate-angle degrees
+/// Specifies a rotation by rotate-angle degrees
 pub fn rotate[N : RealFloat](angle : N) -> String {
   "rotate(\{angle})"
 }
 
 ///|
-///| Specifies a rotation by rotate-angle degrees about the given point rx,ry
+/// Specifies a rotation by rotate-angle degrees about the given point rx,ry
 pub fn rotate_around[N : RealFloat](angle : N, rx : N, ry : N) -> String {
   "rotate(\{angle},\{rx},\{ry})"
 }
 
 ///|
-///| Skew transformation along x-axis
+/// Skew transformation along x-axis
 pub fn skew_x[N : RealFloat](angle : N) -> String {
   "skewX(\{angle})"
 }
 
 ///|
-///| Skew transformation along y-axis
+/// Skew transformation along y-axis
 pub fn skew_y[N : RealFloat](angle : N) -> String {
   "skewY(\{angle})"
 }
 
 ///|
-///| Specifies a transform in the form of a transformation matrix
+/// Specifies a transform in the form of a transformation matrix
 pub fn matrix[N : RealFloat](
   a : N,
   b : N,
