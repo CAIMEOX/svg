@@ -48,7 +48,7 @@ pub fn Element::make(self : Element, name : String) -> Element {
 
 ///|
 pub fn Element::new(
-  run : (@immut/hashmap.T[String, String]) -> String
+  run : (@immut/hashmap.T[String, String]) -> String,
 ) -> Element {
   { run, }
 }
@@ -80,23 +80,28 @@ fn build_attr(key : String, val : String) -> String {
 }
 
 ///|
-fn fold_map_with_key[M : Add, K, V](
+fn[M : Add, K, V] fold_map_with_key(
   init~ : M,
   f : (K, V) -> M,
-  m : @immut/hashmap.T[K, V]
+  m : @immut/hashmap.T[K, V],
 ) -> M {
-  m.iter().fold(init~, fn { acc, (k, v) => acc + f(k, v) })
+  m
+  .iter()
+  .fold(init~, fn(acc, entry) {
+    let (k, v) = entry
+    acc + f(k, v)
+  })
 }
 
 ///|
 fn build_map(arr : Array[Attribute]) -> @immut/hashmap.T[String, String] {
   let map = @immut/hashmap.new()
   let l = arr.length()
-  loop l, map {
-    0, acc => acc
-    i, acc => {
+  loop (l, map) {
+    (0, acc) => acc
+    (i, acc) => {
       let val = arr[i - 1]
-      continue i - 1, acc.add(val.attr, val.value)
+      continue (i - 1, acc.add(val.attr, val.value))
     }
   }
 }
@@ -111,7 +116,7 @@ pub fn term(name : String, arr : Array[Attribute], child? : Element) -> Element 
 
 ///|
 pub fn Element::str(str : String) -> Element {
-  Element::new(fn { _ => str })
+  Element::new(fn(_) { str })
 }
 
 ///|
@@ -195,7 +200,7 @@ pub fn feColorMatrix(attrs : Array[Attribute], child? : Element) -> Element {
 /// feComponentTransfer element
 pub fn feComponentTransfer(
   attrs : Array[Attribute],
-  child? : Element
+  child? : Element,
 ) -> Element {
   term("feComponentTransfer", attrs, child?)
 }
@@ -306,7 +311,7 @@ pub fn fePointLight(attrs : Array[Attribute], child? : Element) -> Element {
 /// feSpecularLighting element
 pub fn feSpecularLighting(
   attrs : Array[Attribute],
-  child? : Element
+  child? : Element,
 ) -> Element {
   term("feSpecularLighting", attrs, child?)
 }
