@@ -48,7 +48,7 @@ pub fn Element::make(self : Element, name : String) -> Element {
 
 ///|
 pub fn Element::new(
-  run : (@immut/hashmap.T[String, String]) -> String
+  run : (@immut/hashmap.T[String, String]) -> String,
 ) -> Element {
   { run, }
 }
@@ -80,10 +80,10 @@ fn build_attr(key : String, val : String) -> String {
 }
 
 ///|
-fn fold_map_with_key[M : Add, K, V](
+fn[M : Add, K, V] fold_map_with_key(
   init~ : M,
   f : (K, V) -> M,
-  m : @immut/hashmap.T[K, V]
+  m : @immut/hashmap.T[K, V],
 ) -> M {
   m.iter().fold(init~, fn { acc, (k, v) => acc + f(k, v) })
 }
@@ -195,7 +195,7 @@ pub fn feColorMatrix(attrs : Array[Attribute], child? : Element) -> Element {
 /// feComponentTransfer element
 pub fn feComponentTransfer(
   attrs : Array[Attribute],
-  child? : Element
+  child? : Element,
 ) -> Element {
   term("feComponentTransfer", attrs, child?)
 }
@@ -306,7 +306,7 @@ pub fn fePointLight(attrs : Array[Attribute], child? : Element) -> Element {
 /// feSpecularLighting element
 pub fn feSpecularLighting(
   attrs : Array[Attribute],
-  child? : Element
+  child? : Element,
 ) -> Element {
   term("feSpecularLighting", attrs, child?)
 }
