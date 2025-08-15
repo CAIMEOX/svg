@@ -66,7 +66,9 @@ fn logo_hsk() -> Element {
 test {
   fn svg_it(e : Element) -> Element {
     doc_type() +
-    with_attr(e.svg11(), [
+    e
+    .svg11()
+    .with_attr([
       @svg.Version["1.1"],
       @svg.Width["100%"],
       @svg.Height["100%"],
@@ -87,7 +89,7 @@ test {
 test {
   fn svg_it2(contents) {
     doc_type() +
-    svg11(contents).with_attr([
+    Element::svg11(contents).with_attr([
       @svg.Version["1.1"],
       @svg.Width["300"],
       @svg.Height["200"],

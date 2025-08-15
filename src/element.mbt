@@ -85,18 +85,23 @@ fn[M : Add, K, V] fold_map_with_key(
   f : (K, V) -> M,
   m : @immut/hashmap.T[K, V],
 ) -> M {
-  m.iter().fold(init~, fn { acc, (k, v) => acc + f(k, v) })
+  m
+  .iter()
+  .fold(init~, fn(acc, entry) {
+    let (k, v) = entry
+    acc + f(k, v)
+  })
 }
 
 ///|
 fn build_map(arr : Array[Attribute]) -> @immut/hashmap.T[String, String] {
   let map = @immut/hashmap.new()
   let l = arr.length()
-  loop l, map {
-    0, acc => acc
-    i, acc => {
+  loop (l, map) {
+    (0, acc) => acc
+    (i, acc) => {
       let val = arr[i - 1]
-      continue i - 1, acc.add(val.attr, val.value)
+      continue (i - 1, acc.add(val.attr, val.value))
     }
   }
 }
@@ -111,7 +116,7 @@ pub fn term(name : String, arr : Array[Attribute], child? : Element) -> Element 
 
 ///|
 pub fn Element::str(str : String) -> Element {
-  Element::new(fn { _ => str })
+  Element::new(fn(_) { str })
 }
 
 ///|
