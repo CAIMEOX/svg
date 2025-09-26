@@ -1,6 +1,6 @@
 ///|
 struct Element {
-  run : (@immut/hashmap.T[String, String]) -> String
+  run : (@immut/hashmap.HashMap[String, String]) -> String
 }
 
 ///|
@@ -9,7 +9,7 @@ pub impl Show for Element with to_string(self) {
 }
 
 ///|
-pub impl Add for Element with op_add(self, other) {
+pub impl Add for Element with add(self, other) {
   Element::new(fn(attrs) {
     let self_str = (self.run)(attrs)
     let other_str = (other.run)(attrs)
@@ -48,7 +48,7 @@ pub fn Element::make(self : Element, name : String) -> Element {
 
 ///|
 pub fn Element::new(
-  run : (@immut/hashmap.T[String, String]) -> String,
+  run : (@immut/hashmap.HashMap[String, String]) -> String,
 ) -> Element {
   { run, }
 }
@@ -83,7 +83,7 @@ fn build_attr(key : String, val : String) -> String {
 fn[M : Add, K, V] fold_map_with_key(
   init~ : M,
   f : (K, V) -> M,
-  m : @immut/hashmap.T[K, V],
+  m : @immut/hashmap.HashMap[K, V],
 ) -> M {
   m
   .iter()
@@ -94,7 +94,7 @@ fn[M : Add, K, V] fold_map_with_key(
 }
 
 ///|
-fn build_map(arr : Array[Attribute]) -> @immut/hashmap.T[String, String] {
+fn build_map(arr : Array[Attribute]) -> @immut/hashmap.HashMap[String, String] {
   let map = @immut/hashmap.new()
   let l = arr.length()
   loop (l, map) {
@@ -131,7 +131,8 @@ pub fn svg11(self : Element) -> Element {
   )
 }
 
-///| SVG element creation functions
+///|
+/// SVG element creation functions
 pub fn doc_type() -> Element {
   Element::doc_type("svg")
 }
@@ -568,7 +569,7 @@ pub fn animateTransform(attrs : Array[Attribute], child? : Element) -> Element {
   term("animateTransform", attrs, child?)
 }
 
-///| 
+///|
 /// Create element without closing tag
 fn element_no_end(name : String, attrs : Array[Attribute]) -> Element {
   Element::with_attr(Element::make_empty(name), attrs)
