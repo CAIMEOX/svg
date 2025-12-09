@@ -553,6 +553,6 @@ pub impl Show for Tag with to_string(self) {
 }
 
 ///|
-pub fn op_get(self : Tag, att : String) -> Attribute {
+pub fn Tag::op_get(self : Tag, att : String) -> Attribute {
   new(self.to_string(), att)
 }
