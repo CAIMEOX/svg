@@ -70,7 +70,7 @@ pub fn Element::doc_type(name : String) -> Element {
 }
 
 ///|
-pub fn with_attr(self : Element, attr : Array[Attribute]) -> Element {
+pub fn Element::with_attr(self : Element, attr : Array[Attribute]) -> Element {
   Element::new(fn(a) { (self.run)(a.union(build_map(attr))) })
 }
 
@@ -120,7 +120,7 @@ pub fn Element::str(str : String) -> Element {
 }
 
 ///|
-pub fn svg11(self : Element) -> Element {
+pub fn Element::svg11(self : Element) -> Element {
   svg(
     [
       Version["1.1"],
